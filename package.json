@@ -1,0 +1,17 @@
+{
+  "name": "custome-chrome-homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/global.css -o ./dist/global.css --watch",
+    "build": "npx tailwindcss -i ./src/global.css -o ./dist/global.css  --minify"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jalali-moment": "^3.3.11"
+  }
+}
