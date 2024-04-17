@@ -71,10 +71,29 @@ let linklistItems = ''
 
 for (let index = 0; index < linkslist.length; index++) {
     linklistItems += `
-    <div class="">
-        <a href="${linkslist[index].link}" class="block hover:underline border rounded-lg px-1">
+    <div class="border group flex rounded-lg px-1 gap-1">
+        <a href="${linkslist[index].link}" class="block hover:underline  ">
         ${linkslist[index].linkTitle}
         </a>
+        <div class="ci-link-list-item hover:bg-red-500 cursor-pointer hidden group-hover:block" key="${index}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"
+                key="${index}">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
     </div>`
 }
 elLinkList.innerHTML = linklistItems
+
+let elsLinkListItems = document.getElementsByClassName('ci-link-list-item')
+
+Array.prototype.forEach.call(elsLinkListItems, (element) => {
+    element.addEventListener('click', (event) => {
+        const linkIndex = parseInt(event.target.getAttribute('key'))
+        const theLinkslist = JSON.parse(localStorage.getItem('link-list')) ?? []
+        theLinkslist.splice(linkIndex, 1)
+        localStorage.setItem('link-list', JSON.stringify(theLinkslist))
+        // TODO
+        location.reload();
+    })
+})
