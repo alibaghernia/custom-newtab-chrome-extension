@@ -6,6 +6,10 @@ let elHideIcon = document.getElementById('hide-icon')
 let elSwitchBtn = document.getElementById('switch-btn')
 let elLinkList = document.getElementById('link-list')
 let elAddLinkBtn = document.getElementById('add-link-btn')
+// 
+let elSwitchBtnLinkList = document.getElementById('switch-btn-link-list')
+let elHideIconLinkList = document.getElementById('hide-icon-link-list')
+let elShowIconLinkList = document.getElementById('show-icon-link-list')
 
 // --------------
 let curentDate = new Date().toLocaleDateString('fa-IR')
@@ -75,7 +79,7 @@ for (let index = 0; index < linkslist.length; index++) {
         <a href="${linkslist[index].link}" class="block hover:underline  ">
         ${linkslist[index].linkTitle}
         </a>
-        <div class="ci-link-list-item hover:bg-red-500 cursor-pointer hidden group-hover:block" key="${index}">
+        <div class="ci-link-list-item hover:bg-red-500 cursor-pointer invisible group-hover:visible" key="${index}">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"
                 key="${index}">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -96,4 +100,29 @@ Array.prototype.forEach.call(elsLinkListItems, (element) => {
         // TODO
         location.reload();
     })
+})
+// --------------------
+if (localStorage.getItem("link-list-state") == 'hidden') {
+    elLinkList.classList.add('hidden')
+    elHideIconLinkList.classList.add('hidden')
+    elAddLinkBtn.classList.add('hidden')
+} else {
+    elShowIconLinkList.classList.add('hidden')
+}
+
+elSwitchBtnLinkList.addEventListener('click', function (e) {
+    if (localStorage.getItem("link-list-state") == 'hidden') {
+        elHideIconLinkList.classList.remove('hidden')
+        elShowIconLinkList.classList.add('hidden')
+        elLinkList.classList.remove('hidden')
+        elAddLinkBtn.classList.remove('hidden')
+        localStorage.setItem("link-list-state", 'visible')
+    } else {
+        elHideIconLinkList.classList.add('hidden')
+        elShowIconLinkList.classList.remove('hidden')
+        elLinkList.classList.add('hidden')
+        elAddLinkBtn.classList.add('hidden')
+        localStorage.setItem("link-list-state", 'hidden')
+
+    }
 })
