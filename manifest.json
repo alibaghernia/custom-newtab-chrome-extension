@@ -9,5 +9,14 @@
     },
     "chrome_url_overrides": {
         "newtab": "./src/newtab/index.html"
+    },
+    "background":{
+        "service_worker":"./src/background.js"
+    },
+    "commands": {
+        "open-translate":{
+            "suggested_key":"Alt+T",
+            "description":"oepn google translator"
+        }
     }
 }
