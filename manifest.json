@@ -10,13 +10,25 @@
     "chrome_url_overrides": {
         "newtab": "./src/newtab/index.html"
     },
-    "background":{
-        "service_worker":"./src/background.js"
+    "background": {
+        "service_worker": "./src/background.js"
     },
     "commands": {
-        "open-translate":{
-            "suggested_key":"Alt+T",
-            "description":"oepn google translator"
+        "open-translate": {
+            "suggested_key": "Alt+T",
+            "description": "open google translator"
+        },
+        "open-longman": {
+            "suggested_key": "Alt+L",
+            "description": "open longman"
+        },
+        "open-youtube": {
+            "suggested_key": "Alt+Y",
+            "description": "open youtube"
+        },
+        "open-todo-list": {
+            "suggested_key": "Alt+M",
+            "description": "open microsoft todo list"
         }
     }
 }
