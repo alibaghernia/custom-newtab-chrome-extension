@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./src/global.css -o ./dist/global.css --watch",
     "build": "npx tailwindcss -i ./src/global.css -o ./dist/global.css  --minify"
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alpinejs": "^3.13.7",
     "jalali-moment": "^3.3.11"
   }
 }
