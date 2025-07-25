@@ -3,8 +3,8 @@ chrome.commands.onCommand.addListener((command) => {
         chrome.tabs.create({ url: "https://translate.google.com/?sl=en&tl=fa&op=translate" });
         return;
     }
-    if (command === 'open-longman') {
-        chrome.tabs.create({ url: "https://www.ldoceonline.com/" });
+    if (command === 'open-chatgpt') {
+        chrome.tabs.create({ url: "https://chatgpt.com/" });
         return;
     }
     if (command === 'open-youtube') {

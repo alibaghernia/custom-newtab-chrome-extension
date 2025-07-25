@@ -18,9 +18,9 @@
             "suggested_key": "Alt+T",
             "description": "open google translator"
         },
-        "open-longman": {
-            "suggested_key": "Alt+L",
-            "description": "open longman"
+        "open-chatgpt": {
+            "suggested_key": "Alt+C",
+            "description": "open chatGPt"
         },
         "open-youtube": {
             "suggested_key": "Alt+Y",
